@@ -1,29 +1,22 @@
 package com.example.room.mvvm.adapter
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import com.example.room.mvvm.R
 import com.example.room.mvvm.model.StoreTableModel
 import com.example.room.mvvm.repository.StoreRepository
-import com.example.room.mvvm.viewmodel.StoreViewModel
-import kotlinx.coroutines.launch
-import androidx.lifecycle.lifecycleScope
-import com.example.room.mvvm.repository.StoreRepository.Companion.deleteItem
-import com.example.room.mvvm.view.MapActivity
 import com.example.room.mvvm.view.StoreListActivity
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 
 //import com.example.room.mvvm.view.ItemsViewModel
@@ -64,6 +57,7 @@ class CustomAdapter(private val mList: List<StoreTableModel>) : RecyclerView.Ada
 
             val intent = Intent(context, StoreListActivity::class.java)
             context.startActivity(intent)
+            (context as Activity).finish()
 
         }
     }
